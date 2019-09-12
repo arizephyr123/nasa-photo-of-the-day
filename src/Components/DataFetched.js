@@ -6,7 +6,9 @@ export default function DataList() {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.nasa.gov/planetary/apod?api_key=H1CI0YQyDi8KqoYTbfal3iZi2hOAVYyeZdbUcHKF")
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=H1CI0YQyDi8KqoYTbfal3iZi2hOAVYyeZdbUcHKF"
+      )
       .then(response => {
         //console.log(response.data.title);
         const info = response.data;
@@ -20,14 +22,13 @@ export default function DataList() {
 
   return (
     <div>
-      {data.map(data => {
-        return (
-          <DataCard
-            title={data.title}
-            description={data.description}
-          />
-        );
-      })}
+      <DataCard
+        title={data.title}
+        date={data.date}
+        copyright={data.copyright}
+        hdurl={data.hdurl}
+        explanation={data.explanation}
+      />
     </div>
   );
 } //DataList close
