@@ -1,13 +1,19 @@
 import React from "react";
 import "./App.css";
+import DataList from "./Components/DataFetched";
+import DropDown from "./Components/DropDown";
 
 function App() {
   return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+    <div>
+      <h1>
+        {" "}
+        <span role="img" aria-label="satellite emoji">🛰</span> NASA Photo of the Day <span role="img" aria-label="rocket emoji">🚀</span>
+      </h1>
+      <DropDown />
+      <div>
+      <DataList fluid />
+      </div>
     </div>
   );
 }
